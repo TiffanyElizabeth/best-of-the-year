@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Item Detail</title>
+</head>
+
+<body>
+    <h1 th:text="${type} + ' Detail'">Item Detail</h1>
+    <p>Title: <span th:text="${item.title}">Title</span></p>
+    <p>ID: <span th:text="${item.id}">ID</span></p>
+</body>
+
+</html>
