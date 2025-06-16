@@ -55,27 +55,14 @@ public class HomeController {
 
     @GetMapping("/movies")
     public String moviesString(Model model) {
-        String movies = "";
-        for (Movie i : getBestMovies()) {
-            movies += i.getTitle();
-            movies += ", ";
-        }
-
-        model.addAttribute("movies", movies);
+        model.addAttribute("movies", getBestMovies());
 
         return "movies";
     }
 
     @GetMapping("/songs")
     public String songsString(Model model) {
-        String songs = "";
-        for (Song i : getBestSongs()) {
-            songs += i.getTitle();
-            songs += ", ";
-
-        }
-
-        model.addAttribute("songs", songs);
+        model.addAttribute("songs", getBestSongs());
 
         return "songs";
     }

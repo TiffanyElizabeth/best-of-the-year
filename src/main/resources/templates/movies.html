@@ -9,7 +9,11 @@
 
 <body>
     <h1>Movies List: </h1>
-    <p th:text="${movies}" />
+    <p>
+        <span th:each="movie, iterStat : ${movies}">
+            <span th:text="${movie.title}"></span><span th:if="${!iterStat.last}">, </span>
+        </span>
+    </p>
 </body>
 
 </html>
