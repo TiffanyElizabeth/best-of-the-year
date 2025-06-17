@@ -12,12 +12,24 @@
     <div th:insert="~{fragments :: header}">
     </div>
     <div class="d-flex justify-content-center">
-        <div class="container border border-top-0 border-dark">
-            <div>
+        <div class="container border border-top-0 border-dark text-center">
+            <div class="p-3 mt-3">
                 <h1 th:text="'Best of the year by ' + ${name}" />
             </div>
+            <div th:insert="~{fragments :: detail-content}"></div>
         </div>
     </div>
+    <!-- <div class="d-flex justify-content-center">
+        <div class="container border border-top-0 border-dark text-center">
+            <div class="p-3 mt-3">
+                <h1 th:text="'Best of the year by ' + ${name}" />
+            </div>
+            <div class="d-flex flex-column mx-5 mb-5">
+                <div class="p-4 bg-warning-subtle border border-warning border-bottom-0">image</div>
+                <div class="p-5 border border-dark">description</div>
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>
