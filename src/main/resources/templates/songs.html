@@ -10,12 +10,23 @@
 
 <body>
     <div th:insert="~{fragments :: header}"></div>
-    <h1>Songs List: </h1>
+    <!-- <h1>Songs List: </h1>
     <p>
         <span th:each="song, iterStat : ${songs}">
             <span th:text="${song.title}"></span><span th:if="${!iterStat.last}">, </span>
         </span>
-    </p>
+    </p> -->
+    <!-- <div class="d-flex justify-content-center">
+        <div class="container border border-top-0 border-dark">
+            <h1 th:text="'Best ' + ${category}"></h1>
+            <p>
+                <span th:each="song, iterStat : ${songs}">
+                    <span th:text="${song.title}"></span><span th:if="${!iterStat.last}">, </span>
+                </span>
+            </p>
+        </div>
+    </div> -->
+    <div th:insert="~{fragments :: best-list('Songs', ${songs})}"></div>
 </body>
 
 </html>

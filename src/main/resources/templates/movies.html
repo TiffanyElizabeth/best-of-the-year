@@ -10,12 +10,13 @@
 
 <body>
     <div th:insert="~{fragments :: header}"></div>
-    <h1>Movies List: </h1>
+    <div th:insert="~{fragments :: best-list('Movies', ${movies})}"></div>
+    <!--<h1>Movies List: </h1>
     <p>
         <span th:each="movie, iterStat : ${movies}">
             <span th:text="${movie.title}"></span><span th:if="${!iterStat.last}">, </span>
         </span>
-    </p>
+    </p> -->
 </body>
 
 </html>

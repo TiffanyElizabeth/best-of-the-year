@@ -22,6 +22,24 @@
             </div>
         </div>
     </div>
+
+    <div th:fragment="best-list(category, items)">
+        <div class="d-flex justify-content-center">
+            <div class="container border border-top-0 border-dark text-center">
+                <h1 th:text="'Best ' + ${category}" class="p-3 mt-4"></h1>
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <div class="d-flex flex-column mb-4">
+                            <span th:each="item, iterStat : ${items}" th:text="${item.title}"
+                                class="border-top border-start border-end border-dark p-3"
+                                th:classappend="${iterStat.last} ? ' border-bottom'">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
