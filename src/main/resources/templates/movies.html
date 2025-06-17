@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <link th:href="@{/webjars/bootstrap/5.3.5/css/bootstrap.min.css}" th:rel="stylesheet" />
+    <title>movies</title>
 </head>
 
 <body>
+    <div th:insert="~{fragments :: header}"></div>
     <h1>Movies List: </h1>
     <p>
         <span th:each="movie, iterStat : ${movies}">

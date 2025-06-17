@@ -48,7 +48,7 @@ public class HomeController {
         return xavierRuddSongs;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public String bestYear(Model model) {
         model.addAttribute("name", "java");
         return "home";

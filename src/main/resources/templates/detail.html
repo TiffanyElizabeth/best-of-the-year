@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Item Detail</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
 </head>
 
 <body>
-    <h1 th:text="${type} + ' Detail'">Item Detail</h1>
+    <h1 class="text-danger" th:text="${type} + ' Detail'">Item Detail</h1>
     <p>Title: <span th:text="${item.title}">Title</span></p>
     <p>ID: <span th:text="${item.id}">ID</span></p>
 </body>
