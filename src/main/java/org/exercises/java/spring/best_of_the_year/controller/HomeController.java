@@ -20,6 +20,7 @@ public class HomeController {
         Movie budapestHotel = new Movie(i++, "The Grand Budapest Hotel");
         Movie brooklyn = new Movie(i++, "Brooklyn");
         Movie littleWomen = new Movie(i++, "Little Women");
+        Movie ladyBird = new Movie(i++, "Lady Bird");
 
         ArrayList<Movie> saoriseRonanMovies = new ArrayList<Movie>();
 
@@ -27,6 +28,7 @@ public class HomeController {
         saoriseRonanMovies.add(budapestHotel);
         saoriseRonanMovies.add(brooklyn);
         saoriseRonanMovies.add(littleWomen);
+        saoriseRonanMovies.add(ladyBird);
 
         return saoriseRonanMovies;
     }
@@ -37,6 +39,7 @@ public class HomeController {
         Song whereToNow = new Song(i++, "Where to Now");
         Song stoneyCreek = new Song(i++, "Stoney Creek");
         Song followTheSun = new Song(i++, "Follow the Sun");
+        Song flag = new Song(i++, "Flag");
 
         ArrayList<Song> xavierRuddSongs = new ArrayList<Song>();
 
@@ -44,6 +47,7 @@ public class HomeController {
         xavierRuddSongs.add(whereToNow);
         xavierRuddSongs.add(stoneyCreek);
         xavierRuddSongs.add(followTheSun);
+        xavierRuddSongs.add(flag);
 
         return xavierRuddSongs;
     }
@@ -56,16 +60,18 @@ public class HomeController {
 
     @GetMapping("/movies")
     public String moviesString(Model model) {
-        model.addAttribute("movies", getBestMovies());
+        model.addAttribute("pageName", "Movies!");
+        model.addAttribute("listItems", getBestMovies());
 
-        return "movies";
+        return "list";
     }
 
     @GetMapping("/songs")
     public String songsString(Model model) {
-        model.addAttribute("songs", getBestSongs());
+        model.addAttribute("pageName", "Songs!");
+        model.addAttribute("listItems", getBestSongs());
 
-        return "songs";
+        return "list";
     }
 
     @GetMapping("/movies/{id}")
