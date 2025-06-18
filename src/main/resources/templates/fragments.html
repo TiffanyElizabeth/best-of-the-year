@@ -15,25 +15,32 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-4 border-end border-dark p-4">Best of</div>
                     <div class="col-8">
-                        <button type="button" class="btn btn-outline-dark px-4 me-1">Movies</button>
-                        <button type="button" class="btn btn-outline-dark px-4">Songs</button>
+                        <!-- <button type="button" class="btn btn-outline-dark px-4 me-1">Movies</button>
+                        <button type="button" class="btn btn-outline-dark px-4">Songs</button> -->
+                        <a th:href="@{/movies}" class="btn btn-outline-dark px-4 me-1">Movies</a>
+                        <a th:href="@{/songs}" class="btn btn-outline-dark px-4">Songs</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div th:fragment="best-list(category, items)">
+    <div th:fragment="best-list(category, items, basePath)">
         <div class="d-flex justify-content-center">
             <div class="container border border-top-0 border-dark text-center">
                 <h1 th:text="'Best ' + ${category}" class="p-3 mt-4"></h1>
                 <div class="row justify-content-center">
                     <div class="col-4">
                         <div class="d-flex flex-column mb-4">
-                            <span th:each="item, iterStat : ${items}" th:text="${item.title}"
+                            <a th:each="item, iterStat : ${items}" th:text="${item.title}"
+                                th:href="@{/{path}/{id}(path=${basePath}, id=${item.id})}"
+                                class="border-top border-start border-end border-dark p-3 text-decoration-none text-dark"
+                                th:classappend="${iterStat.last} ? ' border-bottom'">
+                            </a>
+                            <!-- <span th:each="item, iterStat : ${items}" th:text="${item.title}"
                                 class="border-top border-start border-end border-dark p-3"
                                 th:classappend="${iterStat.last} ? ' border-bottom'">
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                 </div>
@@ -46,6 +53,7 @@
             <div class="p-4 bg-warning-subtle border border-warning border-bottom-0">image</div>
             <div class="p-5 border border-dark">description</div>
         </div>
+        <a th:href="@{/}" class="btn btn-secondary m-5">← Back to Home</a>
     </div>
 </body>
 

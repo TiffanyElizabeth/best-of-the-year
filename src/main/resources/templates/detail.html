@@ -12,7 +12,7 @@
     <div class="d-flex justify-content-center">
         <div class="container border border-top-0 border-dark text-center">
             <div class="p-3 mt-3">
-                <h1 th:text="${item.id} + ' - ' + ${item.title}" />
+                <h1 th:text="${item.id + 1} + ' - ' + ${item.title}" />
             </div>
             <div th:insert="~{fragments :: detail-content}"></div>
         </div>

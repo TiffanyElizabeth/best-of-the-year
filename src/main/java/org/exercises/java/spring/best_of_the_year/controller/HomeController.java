@@ -62,6 +62,7 @@ public class HomeController {
     public String moviesString(Model model) {
         model.addAttribute("pageName", "Movies!");
         model.addAttribute("listItems", getBestMovies());
+        model.addAttribute("basePath", "movies");
 
         return "list";
     }
@@ -70,6 +71,7 @@ public class HomeController {
     public String songsString(Model model) {
         model.addAttribute("pageName", "Songs!");
         model.addAttribute("listItems", getBestSongs());
+        model.addAttribute("basePath", "songs");
 
         return "list";
     }
